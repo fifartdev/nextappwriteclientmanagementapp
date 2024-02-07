@@ -3,12 +3,12 @@ import { useRouter } from "next/navigation"
 
 
 
-const ViewClient = ({id}) => {
+const ViewClient = ({id,path}) => {
 
     const router = useRouter()
 
     const handleClick = async () => {
-       router.push(`/clients/${id}`)
+       router.push(`${path}/${id}`)
     }
   return (
     <button

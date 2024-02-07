@@ -12,7 +12,7 @@ const clientId = async ({params}) => {
         <div className="flex-1 w-full bg-white p-8 rounded-md shadow-md">
           <h1 className="text-3xl font-bold mb-6 text-center">Στοιχεία</h1>
           <div className="flex items-center justify-center">
-            <BackButton />
+            <BackButton path={'/clients'}/>
           </div>
           <table className="mx-auto mt-8 border border-gray-300">
   <tbody>
@@ -31,7 +31,7 @@ const clientId = async ({params}) => {
   </tbody>
 </table>
 <div className="flex items-center justify-center mt-10">
-<EditClient id={clientData.$id} className="text-green-500 hover:underline cursor-pointer ml-20" />
+<EditClient id={clientData.$id} path={'/clients'} className="text-green-500 hover:underline cursor-pointer ml-20" />
           </div>
         </div>
         </main>

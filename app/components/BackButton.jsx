@@ -2,12 +2,12 @@
 import { useRouter } from "next/navigation";
 
 
-const BackButton = () => {
+const BackButton = ({path}) => {
 
   const router = useRouter()
 
   const handleBack = async () => { 
-    router.push('/clients')
+    router.push(`${path}`)
     
     }
 

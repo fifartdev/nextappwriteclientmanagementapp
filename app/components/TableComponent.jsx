@@ -17,7 +17,8 @@ const TableComponent = ({ columns, data }) => {
       } = useTable({ columns, data }, useGlobalFilter);
     
       const { globalFilter } = state;
-    
+      const generateRandomName = () => `search_${Math.random().toString(36).substr(2, 9)}`;
+
       return (
         <div className="mx-auto max-w-full p-4">
       <div className="mb-4">
@@ -25,6 +26,7 @@ const TableComponent = ({ columns, data }) => {
           Αναζήτηση:
         </label>
         <input
+          name={generateRandomName()}
           id="search"
           type="text"
           autoComplete="off"
@@ -60,13 +62,13 @@ const TableComponent = ({ columns, data }) => {
                   </td>
                 ))}
                 <td className="p-2 border-b">
-                <ViewClient id={row.original.$id} className="text-blue-500 hover:underline cursor-pointer mr-2 md:mr-20" />
+                <ViewClient path={'/clients'} id={row.original.$id} className="text-blue-500 hover:underline cursor-pointer mr-2 md:mr-20" />
                 </td>
                 <td className="p-2 border-b">
-                <EditClient id={row.original.$id} className="text-green-500 hover:underline cursor-pointer ml-2 md:ml-20" />
+                <EditClient path={'/clients'} id={row.original.$id} className="text-green-500 hover:underline cursor-pointer ml-2 md:ml-20" />
                 </td>
                 <td className="p-2 border-b">
-                <DeleteButton id={row.original.$id} />
+                <DeleteButton path={'/clients'} id={row.original.$id} />
                 </td>
               </tr>
             );

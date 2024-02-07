@@ -1,10 +1,10 @@
-import { demoDb, DATABASE_ID, COLLECTION_ID } from "@/app/libs/appwrite";
+import { demoDb, DATABASE_ID, COLLECTION_JC_ID } from "@/app/libs/appwrite";
 import EditForm from "./EditForm";
 import BackButton from "@/app/components/BackButton";
 
-const editClientPage = async ({params}) => {
-  
-    const clientData = await demoDb.getDocument(DATABASE_ID,COLLECTION_ID,params.client)
+const editJobCatPage = async ({params}) => {
+    
+   const jobCatData = await demoDb.getDocument(DATABASE_ID, COLLECTION_JC_ID, params.jobcategory)
     
     
     return (
@@ -12,13 +12,13 @@ const editClientPage = async ({params}) => {
   <div className="flex-1 w-full bg-white p-8 rounded-md shadow-md">
     <h1 className="text-3xl font-bold mb-6 text-center">Επεξεργασία Στοιχείων</h1>
     <div className="flex items-center justify-center">
-      <BackButton path={'/clients'} />
+      <BackButton path={'/jobcategories'}/>
     </div>
-    <EditForm id={clientData.$id} name={clientData.name} email={clientData.email} phone={clientData.phone}/>
+      <EditForm id={jobCatData.$id} title={jobCatData.title} />
   </div>
 </main>
 
     )
 }
 
-export default editClientPage
+export default editJobCatPage
