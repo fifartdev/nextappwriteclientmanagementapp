@@ -7,7 +7,7 @@ const BackButton = () => {
   const router = useRouter()
 
   const handleBack = async () => { 
-    router.replace('/clients')
+    router.push('/clients')
     
     }
 

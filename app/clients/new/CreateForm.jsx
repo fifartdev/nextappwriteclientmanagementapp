@@ -2,33 +2,33 @@
 import React, {useState} from 'react'
 import { demoDb, DATABASE_ID, COLLECTION_ID } from "@/app/libs/appwrite";
 import { useRouter } from 'next/navigation';
+import { ID } from '@/app/libs/appwrite';
 
-const EditForm = ({name, email, phone, id}) => {
-    const [newEmail, setNewEmail] = useState(email)
-    const [newPhone, setNewPhone] = useState(phone)
-    const [newName, setNewName] = useState(name)
+const CreateForm = () => {
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [name, setName] = useState('')
     const router = useRouter()
-    const handleNameChange = async (e)=>{
+    const handleChange = async (e)=>{
         e.preventDefault()
-        const updateClient = await demoDb.updateDocument(DATABASE_ID,COLLECTION_ID,id, {
-            email: newEmail, name: newName, phone: newPhone
+        await demoDb.createDocument(DATABASE_ID,COLLECTION_ID,ID.unique(), {
+            email, name, phone
         })
         router.push('/clients')
         router.refresh('/clients')
-        
     }
 
 
   return (
-    <form onSubmit={handleNameChange} className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
+    <form onSubmit={handleChange} className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
     <div className="mb-4">
       <label htmlFor="newName" className="block text-gray-700 text-sm font-bold mb-2">Όνομα</label>
       <input
         type="text"
         id="newName"
-        value={newName}
-        placeholder={name}
-        onChange={(e) => setNewName(e.target.value)}
+        value={name}
+        placeholder='Το όνομα σας...'
+        onChange={(e) => setName(e.target.value)}
         className="w-full p-2 border border-gray-300 rounded-md"
         required
       />
@@ -38,9 +38,9 @@ const EditForm = ({name, email, phone, id}) => {
       <input
         type="text"
         id="newPhone"
-        value={newPhone}
-        placeholder={phone}
-        onChange={(e) => setNewPhone(e.target.value)}
+        value={phone}
+        placeholder='Το τηλέφωνό σας...'
+        onChange={(e) => setPhone(e.target.value)}
         className="w-full p-2 border border-gray-300 rounded-md"
         required
       />
@@ -50,18 +50,18 @@ const EditForm = ({name, email, phone, id}) => {
       <input
         type="email"
         id="newEmail"
-        value={newEmail}
-        placeholder={email}
-        onChange={(e) => setNewEmail(e.target.value)}
+        value={email}
+        placeholder='Το email σας...'
+        onChange={(e) => setEmail(e.target.value)}
         className="w-full p-2 border border-gray-300 rounded-md"
         required
       />
     </div>
-    <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Ενημέρωση</button>
+    <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Εγγραφή</button>
   </form>
   
     
   )
 }
 
-export default EditForm
+export default CreateForm
