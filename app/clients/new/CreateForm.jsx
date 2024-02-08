@@ -12,7 +12,7 @@ const CreateForm = () => {
     const handleChange = async (e)=>{
         e.preventDefault()
         await demoDb.createDocument(DATABASE_ID,COLLECTION_ID,ID.unique(), {
-            email, name, phone
+            email, name, phone,
         })
         router.push('/clients')
         router.refresh('/clients')

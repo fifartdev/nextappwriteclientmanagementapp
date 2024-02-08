@@ -26,6 +26,7 @@ const ListClients = async () => {
           <div className="flex flex-row justify-between mb-5">
             <h3 className="text-xl font-bold mb-4">Όλοι οι πελάτες</h3>
             <Button name='Νέα Εγγραφή Πελάτη' path='/clients/new' />
+            <Button name='Εργασίες' path={'/jobs'} />
             <Button name='Κατηγορίες Εργασιών' path={'/jobcategories'} />
           </div>
           <div className="overflow-x-auto">

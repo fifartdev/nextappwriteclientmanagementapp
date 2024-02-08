@@ -5,7 +5,7 @@ import BackButton from "@/app/components/BackButton";
 const editJobCatPage = async ({params}) => {
     
    const jobCatData = await demoDb.getDocument(DATABASE_ID, COLLECTION_JC_ID, params.jobcategory)
-    
+   console.log('JOB CAT DATA: ',jobCatData);
     
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">
