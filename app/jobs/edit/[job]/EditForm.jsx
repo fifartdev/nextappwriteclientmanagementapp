@@ -26,7 +26,7 @@ const EditForm = ({id,date,description,jobsCategory}) => {
     const handleJobChange = async (e)=>{
       try {
         e.preventDefault()
-        console.log('New DATA are: ', {newDate, newDescription, newJobCategory, id});
+        //console.log('New DATA are: ', {newDate, newDescription, newJobCategory, id});
         await demoDb.updateDocument(DATABASE_ID, COLLECTION_JOB_ID, id, {
           date: newDate,
           description: newDescription,

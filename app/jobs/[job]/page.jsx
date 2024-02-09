@@ -5,8 +5,8 @@ import { demoDb, DATABASE_ID, COLLECTION_JOB_ID } from "@/app/libs/appwrite";
 const jobId = async ({params}) => {
 
     const jobData = await demoDb.getDocument(DATABASE_ID,COLLECTION_JOB_ID,params.job)
-
-    
+    console.log('JobData are: ', jobData);
+    const currentDate = new Date(jobData.date).toLocaleDateString('el-Gr');
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">
         <div className="flex-1 w-full bg-white p-8 rounded-md shadow-md">
@@ -18,11 +18,11 @@ const jobId = async ({params}) => {
   <tbody>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Ημερομηνία</td>
-      <td className="py-2 px-4 text-center border">{jobData.date}</td>
+      <td className="py-2 px-4 text-center border">{currentDate}</td>
     </tr>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Κατηγορία</td>
-      <td className="py-2 px-4 text-center border">{jobData.jobsCategory}</td>
+      <td className="py-2 px-4 text-center border">{jobData.jobsCategory[0].title}</td>
     </tr>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Περιγραφή</td>
@@ -30,7 +30,7 @@ const jobId = async ({params}) => {
     </tr>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Πελάτης</td>
-      <td className="py-2 px-4 text-center border">{jobData.clients}</td>
+      <td className="py-2 px-4 text-center border">{jobData.clients[0].name}</td>
     </tr>
   </tbody>
 </table>
