@@ -2,8 +2,10 @@ import Button from "../components/Button";
 import { demoDb, DATABASE_ID, COLLECTION_ID } from "../libs/appwrite"
 import TableComponent from "../components/TableComponent";
 
-const ListClients = async () => {
+export const revalidate = 0
 
+const ListClients = async () => {
+  
   const columns = [
     {
       Header: 'Όνομα',
