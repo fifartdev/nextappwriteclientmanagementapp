@@ -1,5 +1,5 @@
 import ListJobCategories from "./ListJobCategories"
-
+export const dynamic = 'force-dynamic';
 
 const jobCategoriesPage = () => {
 return (

@@ -1,6 +1,6 @@
 import BackButton from "@/app/components/BackButton";
 import { demoDb, DATABASE_ID, COLLECTION_ID } from "@/app/libs/appwrite";
-
+export const dynamic = 'force-dynamic';
 const clientId = async ({params}) => {
 
     const clientData = await demoDb.getDocument(DATABASE_ID,COLLECTION_ID,params.client)

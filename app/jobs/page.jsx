@@ -1,6 +1,6 @@
 import ListJobs from "./ListJobs"
 
-
+export const dynamic = 'force-dynamic';
 
 const jobsPage = () => {
 return (

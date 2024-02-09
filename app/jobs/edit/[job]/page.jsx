@@ -1,7 +1,7 @@
 import { demoDb, DATABASE_ID, COLLECTION_JOB_ID } from "@/app/libs/appwrite";
 import EditForm from "./EditForm";
 import BackButton from "@/app/components/BackButton";
-
+export const dynamic = 'force-dynamic';
 const editJobPage = async ({params}) => {
     
    const jobData = await demoDb.getDocument(DATABASE_ID, COLLECTION_JOB_ID, params.job)

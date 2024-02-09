@@ -1,5 +1,5 @@
 import ListClients from "./ListClients"
-
+export const dynamic = 'force-dynamic';
 const clientsPage = () => {
 return (
     <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">

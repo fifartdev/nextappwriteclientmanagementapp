@@ -2,7 +2,6 @@ import Button from "../components/Button";
 import { demoDb, DATABASE_ID, COLLECTION_ID } from "../libs/appwrite"
 import TableComponent from "../components/TableComponent";
 
-export const revalidate = 0
 
 const ListClients = async () => {
   

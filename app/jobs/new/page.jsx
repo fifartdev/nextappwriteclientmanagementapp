@@ -1,7 +1,7 @@
 import BackButton from "@/app/components/BackButton";
 import CreateForm from "./CreateForm";
 
-
+export const dynamic = 'force-dynamic';
 const newJobCategoryPage = async ({params}) => {
 
     
