@@ -13,5 +13,5 @@ export const DATABASE_ID = process.env.NEXT_PUBLIC_DATABASE_ID;
 export const COLLECTION_ID = process.env.NEXT_PUBLIC_COLLECTION_ID;
 export const COLLECTION_JC_ID = process.env.NEXT_PUBLIC_COLLECTION_JC_ID;
 export const COLLECTION_JOB_ID = process.env.NEXT_PUBLIC_COLLECTION_JOB_ID;
-
+export const dynamic = "force-dynamic";
 export { ID, Permission, Role } from "appwrite";

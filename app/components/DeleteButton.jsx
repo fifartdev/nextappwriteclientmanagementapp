@@ -3,13 +3,13 @@ import { demoDb, DATABASE_ID, COLLECTION_ID } from "../libs/appwrite";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const DeleteButton = ({id, path}) => {
+const DeleteButton = ({id, path, collection}) => {
     const [onDelete,setOnDelete] = useState(false)
     const router = useRouter()
 
    const handleDelete = async () => {
     setOnDelete(true)
-    await demoDb.deleteDocument(DATABASE_ID, COLLECTION_ID, id);
+    await demoDb.deleteDocument(DATABASE_ID, collection, id);
     setOnDelete(false)
     router.refresh(`${path}`)
    } 

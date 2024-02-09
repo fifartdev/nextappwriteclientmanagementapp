@@ -4,6 +4,7 @@ import { useTable, useGlobalFilter } from 'react-table'
 import ViewClient from './ViewClient';
 import EditClient from './EditClient';
 import DeleteButton from './DeleteButton';
+import { COLLECTION_JOB_ID } from '../libs/appwrite';
 
 const JobsTableComponent = ({ columns, data }) => {
     const {
@@ -68,7 +69,7 @@ const JobsTableComponent = ({ columns, data }) => {
                 <EditClient path={'/jobs'} id={row.original.$id} className="text-green-500 hover:underline cursor-pointer ml-2 md:ml-20" />
                 </td>
                 <td className="p-2 border-b">
-                <DeleteButton path={'/jobs'} id={row.original.$id} />
+                <DeleteButton path={'/jobs'} collection={COLLECTION_JOB_ID} id={row.original.$id} />
                 </td>
               </tr>
             );
