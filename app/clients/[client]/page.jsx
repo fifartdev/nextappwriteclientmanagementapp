@@ -1,11 +1,10 @@
 import BackButton from "@/app/components/BackButton";
-import EditClient from "@/app/components/EditClient";
 import { demoDb, DATABASE_ID, COLLECTION_ID } from "@/app/libs/appwrite";
 
 const clientId = async ({params}) => {
 
     const clientData = await demoDb.getDocument(DATABASE_ID,COLLECTION_ID,params.client)
-    //console.log('Client is: ', clientData);
+    
     
     return (
         <main className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-100">
@@ -51,7 +50,7 @@ const clientId = async ({params}) => {
 })}
 
 <div className="flex items-center justify-center mt-10">
-{/* <EditClient id={clientData.$id} path={'/clients'} className="text-green-500 hover:underline cursor-pointer ml-20" /> */}
+
           </div>
         </div>
         </main>
