@@ -17,21 +17,21 @@ const clientId = async ({params}) => {
   <tbody>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Όνομα</td>
-      <td className="py-2 px-4 text-center border">{clientData.name}</td>
+      <td className="py-2 px-4 text-center border">{clientData?.name}</td>
     </tr>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Email</td>
-      <td className="py-2 px-4 text-center border">{clientData.email}</td>
+      <td className="py-2 px-4 text-center border">{clientData?.email}</td>
     </tr>
     <tr>
       <td className="py-2 px-4 text-center border font-semibold">Τηλέφωνο</td>
-      <td className="py-2 px-4 text-center border">{clientData.phone}</td>
+      <td className="py-2 px-4 text-center border">{clientData?.phone}</td>
     </tr>
   </tbody>
 </table>
 <hr/>
 <h1 className="text-2xl font-bold mb-6 text-center mt-10">Εργασίες</h1>
-{clientData.jobs.map((j)=>{
+{clientData.jobs?.map((j)=>{
   let jobDate = new Date(j.date).toLocaleDateString('el-GR');
   return(
     <table className="mx-auto mt-8 border border-gray-300">
